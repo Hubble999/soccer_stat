@@ -1,16 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import routes from '../routes';
+import { API_KEY } from '../configs';
 import regeneratorRuntime from 'regenerator-runtime';
 
 const fetchTeams = createAsyncThunk('teams/fetchTeams', async () => {
   try {
     const response = await axios.get(routes.getTeams(), {
       headers: {
-        'X-Auth-Token': '101874d9e3f24b4b895c986de6b61257'
+        'X-Auth-Token': API_KEY
       }
     });
     const { teams } = await response.data;
+    console.log(teams);
     return teams;
   } catch (err) {
     console.log(err);
@@ -28,10 +30,10 @@ const teamsSlice = createSlice({
   reducers: {
     searchTeam(state, { payload }) {
       const { keyword } = payload;
-      const newTeams = state.teams.filter(({shortName}) =>
+      const searchedTeams = state.teams.filter(({ shortName }) =>
         shortName.toLowerCase().startsWith(keyword.toLowerCase())
       );
-      state.teams = newTeams;
+      state.teams = searchedTeams;
     }
   },
   extraReducers: {

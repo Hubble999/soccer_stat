@@ -1,1 +1,0 @@
-export const teamsSelector = (state) => state.teamsState.teams;

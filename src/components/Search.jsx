@@ -1,14 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Form, FormControl, Button } from 'react-bootstrap';
 
-const Search = ({ history }) => {
+const Search = () => {
   const [keyword, setKeyword] = useState('');
+  const history = useHistory();
+  const { pathname } = history.location;
 
   const submitHandler = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
-      history.push(`/search/${keyword}`);
+      history.push(`/${pathname.split('/')[1]}/search/${keyword}`);
     } else {
       history.push('/');
     }
@@ -20,11 +23,11 @@ const Search = ({ history }) => {
       <FormControl
         onChange={(e) => setKeyword(e.target.value)}
         type="text"
-        placeholder="Search teams"
+        placeholder="search"
         className="mr-sm-2"
         value={keyword}
       />
-      <Button type="submit" variant="outline-info">
+      <Button type="submit" variant="outline-success">
         Search
       </Button>
     </Form>
