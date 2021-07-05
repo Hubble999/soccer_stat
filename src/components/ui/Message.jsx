@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert } from 'react-bootstrap';
 
-const Message = ({ variant = 'info', text = 'Ничего не найдено. Укажите период.' }) => {
+const Message = ({ variant = 'info', text = 'Nothing found. Specify the period.' }) => {
   return (
     <Alert className="text-center" variant={variant}>
       {text}

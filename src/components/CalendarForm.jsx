@@ -18,7 +18,7 @@ function CalendarForm({ id, path }) {
       <Col lg="5" md="auto">
         <Form onSubmit={handleSubmit} className="shadow-sm p-3 mb-5 bg-body rounded">
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Начало периода</Form.Label>
+            <Form.Label>Beginning of period</Form.Label>
             <Form.Control
               onChange={(e) => setBeginPeriod(e.target.value)}
               type="date"
@@ -28,7 +28,7 @@ function CalendarForm({ id, path }) {
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Конец периода</Form.Label>
+            <Form.Label>End of period</Form.Label>
             <Form.Control
               onChange={(e) => setEndPeriod(e.target.value)}
               type="date"
@@ -36,7 +36,7 @@ function CalendarForm({ id, path }) {
             />
           </Form.Group>
           <Button variant="primary" type="submit">
-            Получить
+            Get
           </Button>
         </Form>
       </Col>
