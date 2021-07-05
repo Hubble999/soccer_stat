@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode development",
+    "build": "NODE_ENV=production npx webpack --mode production",
     "lint": "eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,css,md,json}' --config ./.prettierrc"
   },
