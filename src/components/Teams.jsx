@@ -35,7 +35,7 @@ const Teams = ({ match }) => {
         <Container className="container-flex">
           {teams.map(({ shortName, venue, founded, website, crestUrl, clubColors, id }) => {
             return (
-              <CardLogo name={shortName} logoUrl={crestUrl} id={id} pathname={pathname} key={id} />
+              <CardLogo name={shortName} logoUrl={crestUrl} id={id} pathname={'/team'} key={id} />
             );
           })}
         </Container>
