@@ -4,7 +4,7 @@
 # [Посмотреть](https://aviasales-ruddy.vercel.app/)
 
 ## Example:
-![Alt text](/upload/example.gif)
+![Alt text](/upload/show.gif)
 
 ### Run
 
