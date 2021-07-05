@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 
-function CalendarForm() {
+function CalendarForm({ id, path }) {
   const [beginPeriod, setBeginPeriod] = useState(null);
   const [endPeriod, setEndPeriod] = useState(null);
   const history = useHistory();
-  const { pathname } = useLocation();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (beginPeriod && endPeriod) {
-      history.push(`${pathname}/period/${beginPeriod}/${endPeriod}`);
+      history.push(`${path}/id/${id}/period/${beginPeriod}/${endPeriod}`);
     }
   };
 

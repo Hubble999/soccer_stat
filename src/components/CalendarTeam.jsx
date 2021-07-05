@@ -20,22 +20,22 @@ function CalendarTeam({ match }) {
 
   return error ? (
     <Container>
-      <CalendarForm id={id} />
+      <CalendarForm id={id} path={'/team'} />
       <Message variant="danger" text={error} />
     </Container>
   ) : !calendar || calendar.length === 0 ? (
     <Container>
-      <CalendarForm id={id} />
+      <CalendarForm id={id} path={'/team'} />
       <Message />
     </Container>
   ) : loading === 'pending' ? (
     <Container>
-      <CalendarForm id={id} />
+      <CalendarForm id={id} path={'/team'} />
       <Loader />
     </Container>
   ) : (
     <Container>
-      <CalendarForm id={id} />
+      <CalendarForm id={id} path={'/team'} />
       <Sheet calendar={calendar} />
     </Container>
   );
