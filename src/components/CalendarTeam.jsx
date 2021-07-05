@@ -13,9 +13,11 @@ function CalendarTeam({ match }) {
   const { calendar, loading, error } = useSelector((state) => state.calendarTeamState);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (dateFrom && dateTo) {
-      dispatch(actions.fetchCalendarTeam({ id, dateFrom, dateTo }));
-    }
+    (async () => {
+      if (dateFrom && dateTo) {
+        await dispatch(actions.fetchCalendarTeam({ id, dateFrom, dateTo }));
+      }
+    })();
   }, [dispatch, dateFrom, dateTo, id]);
 
   return error ? (
